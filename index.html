@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>StreamerBoost Pro - Kit Ultime</title>
+    <style>
+        :root {
+            --bg-color: #0f0c1b;
+            --card-bg: #1a162d;
+            --accent: #7c3aed;
+            --accent-hover: #9333ea;
+            --text-color: #f3f4f6;
+            --text-muted: #9ca3af;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
+            line-height: 1.6;
+            padding: 40px 20px;
+        }
+
+        .container {
+            max-width: 1100px;
+            margin: 0 auto;
+        }
+
+        header {
+            text-align: center;
+            margin-bottom: 50px;
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+            background: linear-gradient(90deg, #a855f7, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        header p {
+            color: var(--text-muted);
+            font-size: 1.1rem;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+            padding: 30px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            transition: transform 0.3s ease, border-color 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--accent);
+        }
+
+        .card-icon {
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+        }
+
+        .card h2 {
+            font-size: 1.4rem;
+            margin-bottom: 15px;
+        }
+
+        .card p {
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            margin-bottom: 25px;
+        }
+
+        .btn {
+            display: inline-block;
+            background-color: var(--accent);
+            color: white;
+            text-align: center;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: background-color 0.2s ease;
+        }
+
+        .btn:hover {
+            background-color: var(--accent-hover);
+        }
+
+        footer {
+            text-align: center;
+            margin-top: 60px;
+            color: var(--text-muted);
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <header>
+            <h1>StreamerBoost Pro</h1>
+            <p>Téléchargez vos ressources exclusives pour propulser votre chaîne</p>
+        </header>
+
+        <div class="grid">
+            <!-- Bloc 1 -->
+            <div class="card">
+                <div>
+                    <div class="card-icon">⚡</div>
+                    <h2>Générateur de bios stratégiques</h2>
+                    <p>Fini le syndrome de la page blanche. Obtenez des descriptions percutantes taillées pour convertir vos viewers sur Twitch et TikTok.</p>
+                </div>
+                <a href="data:text/plain;charset=utf-8,MODÈLES%20DE%20BIOS%20STREAMERBOOST%0A%0A1.%20Twitch%20pro%3A%0A[Nom]%20|%20Gaming%20%26%20Divertissement%0A🔥%20Du%20jeu%20et%20de%20la%20bonne%20humeur.%0A📌%20Planning%20%3A%20Lundi,%20Mercredi,%20Vendredi%20à%2020h30.%0A%0A2.%20TikTok%3A%0A🔴%20En%20live%20tous%20les%20soirs%20!%0A🔗%20Rejoins%20le%20stream%20ici%20%3A%20[Lien]" download="bios_strategiques.txt" class="btn">Télécharger le TXT</a>
+            </div>
+
+            <!-- Bloc 2 -->
+            <div class="card">
+                <div>
+                    <div class="card-icon">🎨</div>
+                    <h2>Kit graphique d'élite</h2>
+                    <p>Des designs épurés, modernes et aux accents néons pour habiller votre chaîne instantanément sans compétences requises.</p>
+                </div>
+                <!-- Remplacez le '#' par le lien vers votre fichier .zip ou Google Drive -->
+                <a href="#" class="btn" onclick="alert('Lien du kit graphique à brancher vers votre Google Drive/Mega !'); return false;">Télécharger le Kit</a>
+            </div>
+
+            <!-- Bloc 3 -->
+            <div class="card">
+                <div>
+                    <div class="card-icon">📈</div>
+                    <h2>Guides & Plannings prêts à l'emploi</h2>
+                    <p>Des structures prêtes à être dupliquées pour planifier vos lives et vos publications d'une main de maître.</p>
+                </div>
+                <a href="data:text/plain;charset=utf-8,PLANNING%20TYPE%20STREAMER%0A%0ALundi%20:%2019h%20-%2023h%20(Jeu%20principal)%0AMercredi%20:%2020h%20-%2000h%20(Découverte%20/%20Chill)%0AVendredi%20:%2021h%20-%20Fin%20(Session%20Ranked%20/%20Communauté)" download="planning_stream.txt" class="btn">Télécharger le TXT</a>
+            </div>
+        </div>
+
+        <footer>
+            <p>&copy; 2026 StreamerBoost Pro. Tous droits réservés.</p>
+        </footer>
+    </div>
+
+</body>
+</html>
