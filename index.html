@@ -3,186 +3,214 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>StreamerBoost Pro - Le Kit Ultime</title>
+    <title>StreamerBoost Pro — Le Kit Ultime pour Créateurs</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <style>
         :root {
-            --bg-dark: #080510;
-            --card-bg: #130f28;
-            --accent-purple: #9333ea;
+            --bg-dark: #05030a;
+            --bg-surface: #0e0a1f;
+            --card-bg: rgba(19, 15, 40, 0.75);
+            --card-border: rgba(168, 85, 247, 0.2);
+            --accent-purple: #a855f7;
             --accent-blue: #3b82f6;
-            --neon-glow: 0 0 20px rgba(147, 51, 234, 0.5);
-            --text-main: #ffffff;
-            --text-muted: #a5b4fc;
+            --neon-glow: 0 0 30px rgba(168, 85, 247, 0.25);
+            --text-main: #f8fafc;
+            --text-muted: #94a3b8;
         }
 
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+            font-family: 'Outfit', sans-serif;
         }
 
         body {
             background-color: var(--bg-dark);
             color: var(--text-main);
             line-height: 1.6;
-            background-image: radial-gradient(circle at 25% 10%, #1a162d 1px, transparent 1px),
-                              radial-gradient(circle at 75% 90%, #1a162d 1px, transparent 1px);
-            background-size: 50px 50px;
-            padding: 60px 20px;
+            min-height: 100vh;
+            background-image: 
+                radial-gradient(circle at 15% 15%, rgba(168, 85, 247, 0.08) 0%, transparent 40%),
+                radial-gradient(circle at 85% 85%, rgba(59, 130, 246, 0.06) 0%, transparent 40%);
+            background-attachment: fixed;
+            padding: 40px 20px 80px 20px;
             overflow-x: hidden;
         }
 
-        body::before {
-            content: '';
-            position: fixed;
-            top: -50%;
-            left: -50%;
-            width: 200%;
-            height: 200%;
-            background: radial-gradient(circle, rgba(147, 51, 234, 0.15) 0%, transparent 60%);
-            z-index: -1;
-            animation: pulse 10s infinite alternate;
-        }
-
-        @keyframes pulse {
-            0% { transform: scale(1); opacity: 0.5; }
-            100% { transform: scale(1.1); opacity: 0.8; }
-        }
-
         .container {
-            max-width: 1200px;
+            max-width: 1100px;
             margin: 0 auto;
         }
 
+        /* --- Header & Logo DA --- */
         header {
             text-align: center;
-            margin-bottom: 80px;
+            margin-bottom: 60px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .brand-container {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            margin-bottom: 20px;
+            background: rgba(19, 15, 40, 0.6);
+            padding: 12px 28px;
+            border-radius: 50px;
+            border: 1px solid var(--card-border);
+            backdrop-filter: blur(12px);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+        }
+
+        .brand-logo {
+            width: 42px;
+            height: 42px;
+            object-fit: contain;
+            filter: drop-shadow(0 0 8px rgba(168, 85, 247, 0.6));
+        }
+
+        .brand-title {
+            font-size: 1.75rem;
+            font-weight: 800;
+            text-transform: uppercase;
+            letter-spacing: 1.5px;
+            background: linear-gradient(90deg, #ffffff 0%, #d8b4fe 50%, #60a5fa 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
         }
 
         header h1 {
-            font-size: 3.5rem;
-            font-weight: 800;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            background: linear-gradient(90deg, #ffffff 0%, #a855f7 50%, #3b82f6 100%);
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            filter: drop-shadow(0 0 5px rgba(168, 85, 247, 0.5));
+            font-size: 2.8rem;
+            font-weight: 700;
+            margin-bottom: 12px;
+            letter-spacing: -0.5px;
+            color: #ffffff;
         }
 
         header p {
             color: var(--text-muted);
-            font-size: 1.2rem;
-            max-width: 600px;
-            margin: 0 auto;
+            font-size: 1.15rem;
+            max-width: 550px;
         }
 
+        /* --- Grid & Cards --- */
         .grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
-            gap: 40px;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 30px;
         }
 
         .card {
             background-color: var(--card-bg);
-            border: 1px solid rgba(147, 51, 234, 0.3);
-            border-radius: 16px;
-            padding: 40px;
-            transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.27);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 35px;
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
             position: relative;
             overflow: hidden;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+            backdrop-filter: blur(10px);
         }
 
         .card:hover {
-            transform: translateY(-10px);
-            border-color: var(--accent-purple);
+            transform: translateY(-6px);
+            border-color: rgba(168, 85, 247, 0.5);
             box-shadow: var(--neon-glow);
+            background: rgba(19, 15, 40, 0.9);
         }
 
-        .card::before {
-            content: '';
-            position: absolute;
-            top: 0;
-            left: -100%;
-            width: 100%;
-            height: 3px;
-            background: linear-gradient(90deg, transparent, var(--accent-purple), transparent);
-            transition: left 0.5s;
+        .card-top {
+            display: flex;
+            flex-direction: column;
         }
 
-        .card:hover::before {
-            left: 100%;
+        .card-badge {
+            align-self: flex-start;
+            font-size: 0.75rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 6px 12px;
+            background: rgba(168, 85, 247, 0.1);
+            color: var(--accent-purple);
+            border-radius: 30px;
+            margin-bottom: 20px;
+            border: 1px solid rgba(168, 85, 247, 0.2);
         }
 
         .card-icon {
-            font-size: 3rem;
-            margin-bottom: 25px;
-            background: linear-gradient(to bottom right, var(--accent-purple), var(--accent-blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
+            font-size: 2.2rem;
+            margin-bottom: 20px;
+            display: inline-block;
         }
 
         .card h2 {
-            font-size: 1.8rem;
-            margin-bottom: 15px;
+            font-size: 1.4rem;
+            font-weight: 700;
+            margin-bottom: 12px;
             color: var(--text-main);
         }
 
         .card p {
             color: var(--text-muted);
             margin-bottom: 30px;
-            font-size: 1rem;
+            font-size: 0.95rem;
+            line-height: 1.5;
         }
 
         .btn {
-            display: inline-block;
+            display: inline-flex;
+            justify-content: center;
+            align-items: center;
             width: 100%;
-            padding: 18px 30px;
-            border-radius: 10px;
-            font-size: 1.1rem;
-            font-weight: 700;
+            padding: 15px 24px;
+            border-radius: 12px;
+            font-size: 0.95rem;
+            font-weight: 600;
             text-align: center;
             text-decoration: none;
             cursor: pointer;
-            transition: all 0.3s ease;
+            transition: all 0.2s ease;
             border: none;
-            text-transform: uppercase;
-            letter-spacing: 1px;
+            letter-spacing: 0.5px;
         }
 
         .btn-primary {
-            background: linear-gradient(45deg, var(--accent-purple), #7e22ce);
+            background: linear-gradient(135deg, var(--accent-purple) 0%, #7e22ce 100%);
             color: white;
-            box-shadow: 0 4px 15px rgba(126, 34, 206, 0.4);
+            box-shadow: 0 4px 12px rgba(168, 85, 247, 0.3);
         }
 
         .btn-primary:hover {
-            background: linear-gradient(45deg, #7e22ce, var(--accent-purple));
-            box-shadow: 0 6px 20px rgba(126, 34, 206, 0.6);
-            transform: translateY(-2px);
+            background: linear-gradient(135deg, #9333ea, #6b21a8);
+            box-shadow: 0 6px 18px rgba(168, 85, 247, 0.5);
+            transform: translateY(-1px);
         }
 
-        /* --- Modales --- */
+        /* --- Modales Pro --- */
         .modal-overlay {
             position: fixed;
             top: 0;
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.85);
+            background: rgba(5, 3, 10, 0.8);
             display: flex;
             justify-content: center;
             align-items: center;
             z-index: 1000;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3s ease;
-            backdrop-filter: blur(5px);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            backdrop-filter: blur(8px);
+            padding: 20px;
         }
 
         .modal-overlay.active {
@@ -191,120 +219,156 @@
         }
 
         .modal-content {
-            background: #1a162d;
-            border: 2px solid var(--accent-purple);
-            border-radius: 16px;
-            padding: 40px;
-            width: 90%;
-            max-width: 700px;
-            max-height: 80vh;
+            background: var(--bg-surface);
+            border: 1px solid var(--card-border);
+            border-radius: 20px;
+            padding: 35px;
+            width: 100%;
+            max-width: 650px;
+            max-height: 85vh;
             overflow-y: auto;
             position: relative;
-            transform: scale(0.9);
-            transition: transform 0.3s ease;
+            transform: translateY(20px) scale(0.98);
+            transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+            box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.7);
         }
 
         .modal-overlay.active .modal-content {
-            transform: scale(1);
+            transform: translateY(0) scale(1);
         }
 
         .modal-close {
             position: absolute;
-            top: 15px;
+            top: 20px;
             right: 20px;
-            font-size: 2rem;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background: rgba(255, 255, 255, 0.05);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.2rem;
             color: var(--text-muted);
             cursor: pointer;
-            background: none;
-            border: none;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: all 0.2s;
         }
 
-        .modal-close:hover { color: white; }
+        .modal-close:hover { 
+            background: rgba(255, 255, 255, 0.1);
+            color: white; 
+        }
 
         .modal-title {
-            font-size: 1.8rem;
-            margin-bottom: 25px;
-            color: var(--accent-purple);
-            border-bottom: 1px solid rgba(147, 51, 234, 0.3);
-            padding-bottom: 10px;
+            font-size: 1.5rem;
+            font-weight: 700;
+            margin-bottom: 20px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding-right: 40px;
         }
 
         .generated-text {
             white-space: pre-line;
-            color: var(--text-main);
-            font-size: 1rem;
-            background: #080510;
-            padding: 20px;
-            border-radius: 8px;
-            border: 1px solid rgba(255,255,255,0.05);
+            color: var(--text-muted);
+            font-size: 0.95rem;
+            background: var(--bg-dark);
+            padding: 25px;
+            border-radius: 12px;
+            border: 1px solid rgba(255, 255, 255, 0.04);
+            line-height: 1.7;
         }
 
+        .generated-text strong {
+            color: var(--text-main);
+        }
+
+        /* --- Footer --- */
         footer {
             text-align: center;
-            margin-top: 100px;
+            margin-top: 80px;
             color: var(--text-muted);
-            font-size: 0.9rem;
-            border-top: 1px solid rgba(255,255,255,0.05);
+            font-size: 0.85rem;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
             padding-top: 30px;
         }
 
+        footer p + p {
+            margin-top: 6px;
+            opacity: 0.7;
+        }
+
         @media (max-width: 768px) {
-            header h1 { font-size: 2.5rem; }
-            .grid { grid-template-columns: 1fr; }
+            header h1 { font-size: 2.2rem; }
+            .brand-title { font-size: 1.4rem; }
+            .card { padding: 25px; }
         }
     </style>
 </head>
 <body>
 
     <div class="container">
+        <!-- En-tête avec intégration de la DA du logo (Couronne + Texte) -->
         <header>
-            <h1>StreamerBoost Pro</h1>
-            <p>Propulsez votre chaîne avec notre kit d'outils professionnels.</p>
+            <div class="brand-container">
+                <img src="51a30df1-4b70-43a4-8329-3ce0d74fe391.png" alt="StreamerBoost Crown Logo" class="brand-logo" />
+                <span class="brand-title">StreamerBoost</span>
+            </div>
+            <h1>Le Kit Ultime Créateur</h1>
+            <p>Propulsez votre chaîne avec des outils et des ressources professionnelles haut de gamme.</p>
         </header>
 
+        <!-- Grille des fonctionnalités -->
         <div class="grid">
             <!-- Bloc 1 : Bios -->
             <div class="card">
-                <div>
+                <div class="card-top">
+                    <span class="card-badge">Conversion</span>
                     <div class="card-icon">⚡</div>
                     <h2>Générateur de bios stratégiques</h2>
-                    <p>Ne perdez plus de temps. Obtenez des descriptions percutantes taillées pour convertir vos viewers.</p>
+                    <p>Ne perdez plus de temps. Obtenez des descriptions percutantes taillées pour convertir vos viewers en abonnés.</p>
                 </div>
                 <button class="btn btn-primary" onclick="openModal('modalBios')">Générer un texte</button>
             </div>
 
-            <!-- Bloc 2 : Kit Graphique (Interactif) -->
+            <!-- Bloc 2 : Kit Graphique -->
             <div class="card">
-                <div>
+                <div class="card-top">
+                    <span class="card-badge">Identité Visuelle</span>
                     <div class="card-icon">🎨</div>
                     <h2>Kit graphique d'élite</h2>
-                    <p>Designs épurés, modernes et aux accents néons pour habiller votre chaîne instantanément.</p>
+                    <p>Designs épurés, modernes et aux accents néons inspirés de votre univers pour habiller votre chaîne.</p>
                 </div>
                 <button class="btn btn-primary" onclick="openModal('modalGraphique')">Accéder aux designs</button>
             </div>
 
             <!-- Bloc 3 : Planning -->
             <div class="card">
-                <div>
+                <div class="card-top">
+                    <span class="card-badge">Croissance</span>
                     <div class="card-icon">📈</div>
                     <h2>Planning & Stratégie de Live</h2>
-                    <p>Dupliquez nos plannings optimisés pour fidéliser votre communauté et maximiser vos audiences.</p>
+                    <p>Dupliquez nos plannings optimisés pour fidéliser votre communauté et maximiser vos audiences régulières.</p>
                 </div>
                 <button class="btn btn-primary" onclick="openModal('modalPlanning')">Générer le planning</button>
             </div>
         </div>
 
+        <!-- Pied de page -->
         <footer>
             <p>&copy; 2026 StreamerBoost Pro. Tous droits réservés.</p>
-            <p style="font-size: 0.8rem; margin-top: 5px;">Le contenu de ce site est réservé aux acheteurs.</p>
+            <p>Accès exclusif réservé aux membres accrédités.</p>
         </footer>
     </div>
 
-    <!-- --- Modale Bios --- -->
+    <!-- --- Modales --- -->
     <div class="modal-overlay" id="modalBios">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modalBios')">&times;</button>
-            <h2 class="modal-title">Modèles de Bios Stratégiques</h2>
+            <h2 class="modal-title">⚡ Modèles de Bios Stratégiques</h2>
             <div class="generated-text">🚀 **StreamerBoost Pro — Kit de Bios Stratégiques**
 
 Bienvenue dans votre guide de bios optimisées. Une bonne bio doit accrocher l'œil en moins de 3 secondes, montrer votre valeur et inciter à s'abonner.
@@ -339,11 +403,10 @@ Bienvenue dans votre guide de bios optimisées. Une bonne bio doit accrocher l'�
         </div>
     </div>
 
-    <!-- --- Modale Kit Graphique --- -->
     <div class="modal-overlay" id="modalGraphique">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modalGraphique')">&times;</button>
-            <h2 class="modal-title">Kit Graphique d'Élite & Overlays</h2>
+            <h2 class="modal-title">🎨 Kit Graphique d'Élite & Overlays</h2>
             <div class="generated-text">🎨 **StreamerBoost Pro — Guide du Kit Graphique**
 
 Donnez une identité visuelle unique et pro à votre chaîne en quelques clics. 
@@ -364,11 +427,10 @@ Donnez une identité visuelle unique et pro à votre chaîne en quelques clics.
         </div>
     </div>
 
-    <!-- --- Modale Planning --- -->
     <div class="modal-overlay" id="modalPlanning">
         <div class="modal-content">
             <button class="modal-close" onclick="closeModal('modalPlanning')">&times;</button>
-            <h2 class="modal-title">Planning Type & Stratégie de Diffusion</h2>
+            <h2 class="modal-title">📈 Planning Type & Stratégie de Diffusion</h2>
             <div class="generated-text">📅 **StreamerBoost Pro — Planning & Semaine Type**
 
 Un bon planning garantit une audience fidèle. Voici la structure idéale testée et approuvée pour exploser sur Twitch :
