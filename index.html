@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>StreamerBoost Pro - Le Kit Ultime</title>
     <style>
-        /* --- Variables & Reset --- */
         :root {
             --bg-dark: #080510;
             --card-bg: #130f28;
@@ -27,7 +26,6 @@
             background-color: var(--bg-dark);
             color: var(--text-main);
             line-height: 1.6;
-            /* Fond étoilé subtil */
             background-image: radial-gradient(circle at 25% 10%, #1a162d 1px, transparent 1px),
                               radial-gradient(circle at 75% 90%, #1a162d 1px, transparent 1px);
             background-size: 50px 50px;
@@ -35,7 +33,6 @@
             overflow-x: hidden;
         }
 
-        /* --- Effets de lumière d'arrière-plan (Inspiré du logo) --- */
         body::before {
             content: '';
             position: fixed;
@@ -58,11 +55,9 @@
             margin: 0 auto;
         }
 
-        /* --- Header --- */
         header {
             text-align: center;
             margin-bottom: 80px;
-            position: relative;
         }
 
         header h1 {
@@ -71,7 +66,6 @@
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 2px;
-            /* Dégradé texte violet/bleu */
             background: linear-gradient(90deg, #ffffff 0%, #a855f7 50%, #3b82f6 100%);
             -webkit-background-clip: text;
             -webkit-text-fill-color: transparent;
@@ -85,7 +79,6 @@
             margin: 0 auto;
         }
 
-        /* --- Grille des Cartes --- */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -105,14 +98,12 @@
             justify-content: space-between;
         }
 
-        /* Effet de bordure néon au survol */
         .card:hover {
             transform: translateY(-10px);
             border-color: var(--accent-purple);
             box-shadow: var(--neon-glow);
         }
 
-        /* Ligne lumineuse en haut de la carte */
         .card::before {
             content: '';
             position: absolute;
@@ -148,7 +139,6 @@
             font-size: 1rem;
         }
 
-        /* --- Boutons --- */
         .btn {
             display: inline-block;
             width: 100%;
@@ -159,13 +149,12 @@
             text-align: center;
             text-decoration: none;
             cursor: pointer;
-            transition:all 0.3s ease;
+            transition: all 0.3s ease;
             border: none;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
 
-        /* Bouton 1 (Violet) */
         .btn-primary {
             background: linear-gradient(45deg, var(--accent-purple), #7e22ce);
             color: white;
@@ -178,7 +167,6 @@
             transform: translateY(-2px);
         }
 
-        /* Bouton 2 (Bleu) */
         .btn-secondary {
             background: transparent;
             border: 2px solid var(--accent-blue);
@@ -191,7 +179,7 @@
             box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
         }
 
-        /* --- Modal (Fenêtre surgissante pour le générateur) --- */
+        /* --- Modales --- */
         .modal-overlay {
             position: fixed;
             top: 0;
@@ -254,7 +242,7 @@
         }
 
         .generated-text {
-            white-space: pre-line; /* Garde les sauts de ligne */
+            white-space: pre-line;
             color: var(--text-main);
             font-size: 1rem;
             background: #080510;
@@ -263,7 +251,6 @@
             border: 1px solid rgba(255,255,255,0.05);
         }
 
-        /* --- Footer --- */
         footer {
             text-align: center;
             margin-top: 100px;
@@ -273,7 +260,6 @@
             padding-top: 30px;
         }
 
-        /* --- Responsive --- */
         @media (max-width: 768px) {
             header h1 { font-size: 2.5rem; }
             .grid { grid-template-columns: 1fr; }
@@ -289,14 +275,14 @@
         </header>
 
         <div class="grid">
-            <!-- Bloc 1 : Générateur de Bios (Interactif) -->
+            <!-- Bloc 1 : Bios -->
             <div class="card">
                 <div>
                     <div class="card-icon">⚡</div>
                     <h2>Générateur de bios stratégiques</h2>
                     <p>Ne perdez plus de temps. Obtenez des descriptions percutantes taillées pour convertir vos viewers.</p>
                 </div>
-                <button class="btn btn-primary" onclick="openModal()">Générer un texte</button>
+                <button class="btn btn-primary" onclick="openModal('modalBios')">Générer un texte</button>
             </div>
 
             <!-- Bloc 2 : Kit Graphique -->
@@ -306,19 +292,17 @@
                     <h2>Kit graphique d'élite</h2>
                     <p>Designs épurés, modernes et aux accents néons pour habiller votre chaîne instantanément.</p>
                 </div>
-                <!-- REMPLACEZ '#' PAR LE LIEN DE VOTE FICHIER (.zip, Google Drive) -->
                 <a href="#" target="_blank" class="btn btn-secondary">Télécharger le Kit (.zip)</a>
             </div>
 
-            <!-- Bloc 3 : Guides & Plannings -->
+            <!-- Bloc 3 : Planning & Stratégie (Interactif) -->
             <div class="card">
                 <div>
                     <div class="card-icon">📈</div>
-                    <h2>Guides & Plannings</h2>
-                    <p>Des structures prêtes à être dupliquées pour planifier vos lives et publications.</p>
+                    <h2>Planning & Stratégie de Live</h2>
+                    <p>Dupliquez nos plannings optimisés pour fidéliser votre communauté et maximiser vos audiences.</p>
                 </div>
-                <!-- REMPLACEZ '#' PAR LE LIEN DE VOTE FICHIER (.pdf, Notion) -->
-                <a href="#" target="_blank" class="btn btn-secondary">Télécharger le Guide (.pdf)</a>
+                <button class="btn btn-primary" onclick="openModal('modalPlanning')">Générer le planning</button>
             </div>
         </div>
 
@@ -328,20 +312,16 @@
         </footer>
     </div>
 
-    <!-- --- Fenêtre Modale (Cachée par défaut) --- -->
-    <div class="modal-overlay" id="modalOverlay">
+    <!-- --- Modale Bios --- -->
+    <div class="modal-overlay" id="modalBios">
         <div class="modal-content">
-            <button class="modal-close" onclick="closeModal()">&times;</button>
-            <h2 class="modal-title">Vos Modèles de Bios Prêts à l'emploi</h2>
-            <div class="generated-text" id="generatedTextContent">
-🚀 **StreamerBoost Pro — Kit de Bios Stratégiques**
+            <button class="modal-close" onclick="closeModal('modalBios')">&times;</button>
+            <h2 class="modal-title">Modèles de Bios Stratégiques</h2>
+            <div class="generated-text">🚀 **StreamerBoost Pro — Kit de Bios Stratégiques**
 
 Bienvenue dans votre guide de bios optimisées. Une bonne bio doit accrocher l'œil en moins de 3 secondes, montrer votre valeur et inciter à s'abonner.
 
----
-
 ### 1. Modèles de Bios pour Twitch (Profil & Panneaux)
-
 **Option 1 : Professionnel & Accrocheur (Idéal pour la croissance)**
 > **[Votre Prénom] | [Votre Type de Jeu / Contenu principal]**
 > 🔥 Du divertissement, de la technique et de la bonne humeur.
@@ -353,10 +333,7 @@ Bienvenue dans votre guide de bios optimisées. Une bonne bio doit accrocher l'�
 > ⚡ Objectif : Faire de chaque live un moment unique.
 > 📩 Contact pro : [Votre Email]
 
----
-
-### 2. Modèles de Bios pour TikTok / Shorts / Reels (Courtes et virales)
-
+### 2. Modèles de Bios pour TikTok / Shorts / Reels
 **Option 3 : Axé sur l'humour / Divertissement**
 > 🔴 En live tous les soirs sur Twitch !
 > 💀 Mes pires moments de galère en jeu c'est ici.
@@ -367,38 +344,61 @@ Bienvenue dans votre guide de bios optimisées. Une bonne bio doit accrocher l'�
 > 🚀 Tips, clips et gros play chaque semaine.
 > 🔗 Mon setup & mes réseaux : [Votre Lien]
 
----
-
-### 3. Astuces pour optimiser votre profil
-
-* **Utilisez des émojis stratégiques :** Ils guident le regard du visiteur vers les informations importantes (planning, lien, réseaux).
-* **Mettez toujours un appel à l'action (CTA) :** Dites clairement à la personne ce qu'elle doit faire (*"Rejoins le discord"*, *"Abonne-toi"*).
-* **Mettez à jour vos horaires :** Un viewer qui sait quand vous êtes en ligne a beaucoup plus de chances de revenir.
-
----
-*Ce document fait partie intégrante de votre kit StreamerBoost Pro.*
-            </div>
+### 3. Astuces d'optimisation
+* **Émojis stratégiques :** Guident le regard vers les informations clés.
+* **Appel à l'action (CTA) :** Dites clairement quoi faire ("Abonne-toi").
+* **Régularité :** Affichez vos horaires de live clairement.</div>
         </div>
     </div>
 
-    <!-- --- Script JavaScript pour la fenêtre --- -->
+    <!-- --- Modale Planning --- -->
+    <div class="modal-overlay" id="modalPlanning">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modalPlanning')">&times;</button>
+            <h2 class="modal-title">Planning Type & Stratégie de Diffusion</h2>
+            <div class="generated-text">📅 **StreamerBoost Pro — Planning & Semaine Type**
+
+Un bon planning garantit une audience fidèle. Voici la structure idéale testée et approuvée pour exploser sur Twitch :
+
+### 🗓️ Semaine Type Recommandée (3 Sessions / Semaine)
+
+* **Lundi (19h00 - 23h00) : Le Grand Rendez-vous**
+  * *Objectif :* Attrapez les spectateurs en début de semaine. 
+  * *Contenu :* Jeu principal du moment / Aventure / Découverte de nouveauté.
+
+* **Mercredi (20h00 - 00h00) : Session Chill / Communauté**
+  * *Objectif :* Créer de la proximité et discuter avec le tchat.
+  * *Contenu :* Jeux multijoueurs avec les abonnés, FAQ, ou concepts originaux.
+
+* **Vendredi (21h00 - Fin de soirée) : Le Prime / Climax**
+  * *Objectif :* Profiter du week-end pour faire de plus longues sessions.
+  * *Contenu :* Mode compétitif (Ranked), défis corsés ou événement spécial.
+
+---
+
+### 💡 3 Règles d'Or pour Réussir son Planning :
+1. **La Cohérence :** Commencez toujours à la même heure. La régularité bat la quantité.
+2. **L'Annonce Réseaux :** Publiez votre planning chaque dimanche sur vos réseaux (TikTok, X, Instagram, Discord).
+3. **Le Repos :** Ne streamez pas 7j/7, l'épuisement (burnout) tue la créativité. Gardez 2 à 3 soirs off pour préparer vos contenus.</div>
+        </div>
+    </div>
+
+    <!-- --- Scripts JavaScript --- -->
     <script>
-        const modal = document.getElementById('modalOverlay');
-
-        function openModal() {
-            modal.classList.add('active');
-            document.body.style.overflow = 'hidden'; // Empêche le scroll derrière
+        function openModal(modalId) {
+            document.getElementById(modalId).classList.add('active');
+            document.body.style.overflow = 'hidden';
         }
 
-        function closeModal() {
-            modal.classList.remove('active');
-            document.body.style.overflow = ''; // Rétablit le scroll
+        function closeModal(modalId) {
+            document.getElementById(modalId).classList.remove('active');
+            document.body.style.overflow = '';
         }
 
-        // Fermer en cliquant en dehors de la fenêtre
         window.onclick = function(event) {
-            if (event.target == modal) {
-                closeModal();
+            if (event.target.classList.contains('modal-overlay')) {
+                event.target.classList.remove('active');
+                document.body.style.overflow = '';
             }
         }
     </script>
