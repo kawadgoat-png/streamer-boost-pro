@@ -167,18 +167,6 @@
             transform: translateY(-2px);
         }
 
-        .btn-secondary {
-            background: transparent;
-            border: 2px solid var(--accent-blue);
-            color: var(--accent-blue);
-        }
-
-        .btn-secondary:hover {
-            background: var(--accent-blue);
-            color: white;
-            box-shadow: 0 4px 15px rgba(59, 130, 246, 0.4);
-        }
-
         /* --- Modales --- */
         .modal-overlay {
             position: fixed;
@@ -285,17 +273,17 @@
                 <button class="btn btn-primary" onclick="openModal('modalBios')">Générer un texte</button>
             </div>
 
-            <!-- Bloc 2 : Kit Graphique -->
+            <!-- Bloc 2 : Kit Graphique (Interactif) -->
             <div class="card">
                 <div>
                     <div class="card-icon">🎨</div>
                     <h2>Kit graphique d'élite</h2>
                     <p>Designs épurés, modernes et aux accents néons pour habiller votre chaîne instantanément.</p>
                 </div>
-                <a href="#" target="_blank" class="btn btn-secondary">Télécharger le Kit (.zip)</a>
+                <button class="btn btn-primary" onclick="openModal('modalGraphique')">Accéder aux designs</button>
             </div>
 
-            <!-- Bloc 3 : Planning & Stratégie (Interactif) -->
+            <!-- Bloc 3 : Planning -->
             <div class="card">
                 <div>
                     <div class="card-icon">📈</div>
@@ -348,6 +336,31 @@ Bienvenue dans votre guide de bios optimisées. Une bonne bio doit accrocher l'�
 * **Émojis stratégiques :** Guident le regard vers les informations clés.
 * **Appel à l'action (CTA) :** Dites clairement quoi faire ("Abonne-toi").
 * **Régularité :** Affichez vos horaires de live clairement.</div>
+        </div>
+    </div>
+
+    <!-- --- Modale Kit Graphique --- -->
+    <div class="modal-overlay" id="modalGraphique">
+        <div class="modal-content">
+            <button class="modal-close" onclick="closeModal('modalGraphique')">&times;</button>
+            <h2 class="modal-title">Kit Graphique d'Élite & Overlays</h2>
+            <div class="generated-text">🎨 **StreamerBoost Pro — Guide du Kit Graphique**
+
+Donnez une identité visuelle unique et pro à votre chaîne en quelques clics. 
+
+### 📁 Éléments Inclus dans le Pack :
+1. **Bannière de Profil (1200 x 480 px) :** Format optimisé pour Twitch, YouTube et Kick avec un style néon violet.
+2. **Panneaux de description (320px de large) :** Séries de boutons prêts à l'emploi (À propos, Règles, Setup, Don, Discord).
+3. **Overlays de Stream :** Écrans de transition "Starting Soon", "Be Right Back" et "Stream Offline" assortis.
+
+### 🔗 Liens de Téléchargement Direct :
+* **Télécharger le dossier complet (.ZIP) :** [Insérer votre lien Google Drive / Mega ici]
+* **Fichiers sources modifiables (Canva / Photoshop) :** [Insérer votre lien ici]
+
+### 🛠️ Comment les installer sur Twitch :
+1. Allez sur votre chaîne Twitch > **À propos** > Activez "Modifier les panneaux".
+2. Ajoutez une image de panneau et reliez-la au lien de votre choix.
+3. Importez vos écrans d'attente directement dans OBS Studio en créant une source "Image" ou "Média".</div>
         </div>
     </div>
 
